@@ -1,4 +1,4 @@
-
+Git Book 地址 ： https://git-scm.com/book/zh/v2
 
 ##Git 是什么？
 
@@ -70,6 +70,7 @@ Repository（仓库）：Git的目标是管理一个工程，或者说是一些�
 * 许多commit objects。
 * 到commit objects 的指针，叫做heads。
 * Git的仓库和工程存储在同一个目录下，在一个叫做.git的子目录中。
+
 
 ##Git 工作流程
 
