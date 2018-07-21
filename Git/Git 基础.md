@@ -344,6 +344,7 @@ git 的日志输出配置当人不仅仅是这些，还有更多详细的，但�
 	$ git push [remot-nmae] [branch-name]
 	$ git push //默认情况下，会将当前提交推送到当前分支所追踪的远程分支上。
 
+<<<<<<< HEAD
 ### 远程仓库的重命名与移除
 
 ”git remote rename [old name] [new name]“ 用于重命名远程仓库名字。
@@ -362,6 +363,8 @@ git 的日志输出配置当人不仅仅是这些，还有更多详细的，但�
 
 
 
+=======
+>>>>>>> 2d8ec8c632c90925876eb75d09fafec7fde50aca
 
 ## 2.6 打标签
 
