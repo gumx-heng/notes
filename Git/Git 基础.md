@@ -281,6 +281,70 @@ git 的日志输出配置当人不仅仅是这些，还有更多详细的，但�
 
 ## 2.5 远程仓库的使用
 
+什么是远程仓库？ 远程仓库就是你托管在其他位置（其他网络中）的**你的项目的版本库**。对于远程仓库，你可能有只读，或者读写权限。与他人协作进行项目开发主要就是管理远程仓库以及根据需求对项目进行拉取和推送。
+
+管理远程仓库包括：如何添加远程仓库、移除无效的远程仓库、管理不同的远程分支并定义他们是否被跟踪，等等。
+
+### 查看远程仓库
+
+使用 ”git remote“ 命令查看每一个远程仓库的简写或者远程仓库服务器的默认名字。
+
+	$ git remote
+	origin
+	
+使用 -v 选项，查看对改远程仓库的读写权限。
+
+	git remote -v
+	origin	git@github.com:gumx-a/notes.git (fetch)
+	origin	git@github.com:gumx-a/notes.git (push)
+
+### 添加远程仓库
+
+运行 git remote add <shortname> <url> 添加一个新的远程 Git 仓库
+
+	$ git remote
+	origin
+	$ git remote add pb https://github.com/paulboone/ticgit
+	$ git remote -v
+	origin	https://github.com/schacon/ticgit (fetch)
+	origin	https://github.com/schacon/ticgit (push)
+	pb	https://github.com/paulboone/ticgit (fetch)
+	pb	https://github.com/paulboone/ticgit (push)
+
+
+现在你可以在命令行中使用字符串 pb 来代替整个 URL。 例如，如果你想拉取 Paul 的仓库中有但你没有的信息，可以运行 git fetch pb：
+
+	$ git fetch pb
+	remote: Counting objects: 43, done.
+	remote: Compressing objects: 100% (36/36), done.
+	remote: Total 43 (delta 10), reused 31 (delta 5)
+	Unpacking objects: 100% (43/43), done.
+	From https://github.com/paulboone/ticgit
+	 * [new branch]      master     -> pb/master
+	 * [new branch]      ticgit     -> pb/ticgit
+
+
+### 从远程仓库中抓取和拉取
+
+
+”git pull [remote-name]“ **抓取**远程分支上的新推送并自动尝试合并到当前所在的分支。
+ 
+	$ git pull [remote-name]
+	$ git pull //默认会抓取本地分支所追踪的远程分支的新推送
+
+”git fetch origin“ **拉取**克隆（或上一次抓取）后新推送的所有工作。 必须注意 git fetch 命令会将数据拉取到你的本地仓库 - 它并不会自动合并或修改你当前的工作。 当准备好时你必须手动将其合并入你的工作。
+
+	$ git fetch [remote-name]
+	$ git fetch //默认拉取本地分支所追踪的远程分支的新推送
+
+### 推送到远程仓库
+
+”git push [remot-nmae] [branch-name]“ 提交指定的本地更新更新到指定的远程成分支上。
+
+	$ git push [remot-nmae] [branch-name]
+	$ git push //默认情况下，会将当前提交推送到当前分支所追踪的远程分支上。
+
+
 ## 2.6 打标签
 
 ## 2.7 Git 别名
