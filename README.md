@@ -1,2 +1,4 @@
 # notes
-笔记
+笔记范围
+
+![Hello world](./images/HelloWorld.png)
