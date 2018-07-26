@@ -71,7 +71,7 @@ Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为�
 
 	$ git config --global core.editor emacs
 
-###查看所有配置信息
+### 查看所有配置信息
 
 
 	git config --list
@@ -85,7 +85,7 @@ Repository（仓库）：Git的目标是管理一个工程，或者说是一些�
 * Git的仓库和工程存储在同一个目录下，在一个叫做.git的子目录中。
 
 
-##Git 工作流程
+## Git 工作流程
 
 
 1. 创建一个Git仓库或者将Git的一个存储库克隆为工作副本。
