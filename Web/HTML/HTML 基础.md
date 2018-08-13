@@ -101,12 +101,12 @@ HTML中需要知道的两种重要的元素类别，块级元素和内联元素�
 
 	
 
-	1. <!DOCTYPE html&lt;: 声明文档类型.
-	2. <html&lt;</html&lt;: <html&lt;元素。这个元素包裹了整个完整的页面，是一个根元素。
-	3. <head&lt;</head&lt;: <head&lt;元素. 这个元素是一个容器，它包含了所有你想包含在HTML页面中但不想在HTML页面中显示的内容。这些内容包括你想在搜索结果中出现的关键字和页面描述，CSS样式，字符集声明等等。
-	4. <meta charset="utf-8"&lt;: 这个元素设置文档使用utf-8字符集编码。
-	5. <title&lt;</title&lt;: 设置页面标题。
-	6. <body&lt;</body&lt;: <body&lt;元素。 包含了你访问页面时所有显示在页面上的内容。
+	1. <!DOCTYPE html>: 声明文档类型.
+	2. <html&lt;</html>: <html>元素。这个元素包裹了整个完整的页面，是一个根元素。
+	3. <head></head>: <head>元素. 这个元素是一个容器，它包含了所有你想包含在HTML页面中但不想在HTML页面中显示的内容。这些内容包括你想在搜索结果中出现的关键字和页面描述，CSS样式，字符集声明等等。
+	4. <meta charset="utf-8">: 这个元素设置文档使用utf-8字符集编码。
+	5. <title&lt;</title>: 设置页面标题。
+	6. <body&lt;</body>: <body>元素。 包含了你访问页面时所有显示在页面上的内容。
 
 
 ### HTML中的空白
@@ -216,9 +216,86 @@ HTML 解释器会将连续出现的空白字符减少为一个单独的空格符
 HTML 的主要工作就是编辑文本结构和文本内容，以便在浏览器上正确的显示。本章介绍了适用于文本的不同结构元素。
 
 
-文档结构化的意义相当明显，未经结构化处理的一段文本，被浏览器处理后将编程一大段只包含空格的文本内容，根本没有可读性。而经过结构化的文本则会被浏览器正确的显示。在结构化的同时还要尽可能的语义化。以便当我们看到这个结构就能大概明白这段文本的显示结果。
+**文档结构化**的意义相当明显，未经结构化处理的一段文本，被浏览器处理后将编程一大段只包含空格的文本内容，根本没有可读性。而经过结构化的文本则会被浏览器正确的显示。在结构化的同时还要尽可能的**语义化**。以便当我们看到这个结构就能大概明白这段文本的显示结果。
 
-接下来是一些基本元素的介绍，就不再列举了。
+**结构化和语义化是文档处理的两大要素。**
+
+* 语义对可访问性，SEO（搜索引擎优化）等非常重要。
+
+
+接下来是一些基本元素的介绍:
+
+### 3.1 &lt;p&gt; 标签、&lt;h&gt; 标签
+
+h 标签和 p 标签是基本的文本处理元素，但是也可以使用其他元素扩展更为丰富的语义。
+
+### 3.2 列表标签
+
+HTML 中存在三种不同类型的列表：
+
+两种基本列表， 无序列表、有序列表。一种描述列表。
+
+* 无序列表 
+	
+		<ol>
+			<li>苹果</li>
+			<li>栗子</li>
+		</ol>
+	
+* 有序列表
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		
+
+嵌套列表
+	
+		<ol>
+			<li>苹果
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</li>
+			<li>栗子
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</li>
+		</ol>
+
+
+### 3.3 重点强调
+
+#### 3.3.1 &lt;em&gt; 斜体
+
+<p>I am <em>glad</em> you weren't <em>late</em>.</p>
+
+	<p>I am <em>glad</em> you weren't <em>late</em>.</p>
+
+#### 3.3.2 &lt;strong&gt; 加粗字体
+
+<p>This liquid is <strong>highly toxic</strong>.</p>
+
+<p>I am counting on you. <strong>Do not</strong> be late!</p>
+
+	<p>This liquid is <strong>highly toxic</strong>.</p>
+
+	<p>I am counting on you. <strong>Do not</strong> be late!</p>	
+#### 3.3.3 斜体字、粗体字、下划线...
+
+* &lt;b&gt; : 被用来传达传统上用斜体表达的意义：外国文字，分类名称，技术术语，一种思想……
+* &lt;i&gt; : 被用来传达传统上用粗体表达的意义：关键字，产品名称，引导句……
+* &lt;u&gt; : 被用来传达传统上用下划线表达的意义：专有名词，拼写错误……
+
+
+**小结：**这一章包含了一些简单的语义元素，在这一领域还有更多的语义元素，在后续的整理中继续。。。
 
 
 
@@ -226,7 +303,78 @@ HTML 的主要工作就是编辑文本结构和文本内容，以便在浏览器
 
 超链接非常重要 ——它们使互联网成为一个互联的网络。
 
+
+### 4.1 链接的解析
+
+通过将文本（或其他内容，见块级链接)转换为&lt;a&gt;元素内的链接来创建基本链接
+
+#### 4.1.1 使用title属性添加支持信息
+
+#### 4.1.2 块级链接
+
+如上所述，你可以将一些内容转换为链接，甚至是 块级元素。如果你想要将一个图像转换为链接，你只需把图像放到&lt;a&gt;&lt;/a&gt;标签中间。
+
+	<a href="https://www.mozilla.org/en-US/">
+	  <img src="mozilla-image.png" alt="mozilla logo that links to the mozilla homepage">
+	</a>
+
+### 4.2 统一资源定位器（URL）与路径（PATH）
+
+* 统一资源定位器（英文：Uniform Resource Locator，简写：URL）是一个定义了在网络上的位置的一个文本字符串。
+
+* 路径指定文件系统中您感兴趣的文件所在的位置
+	* 指向相同目录
+	* 指向子级目录
+	* 指向上级目录
+
+#### 4.2.1 文档片段
+
+超链接可以链接到html文档的特定部分（被称为文档片段），而不仅仅是文件的顶部。
+
+为指定元素指定id
+
+	<h2 id="Mailing_address">Mailing address</h2>
+
+然后链接到那个特定的id，您可以在URL的结尾包含它，前面是一个井号（#）
+	
+	<p>Want to write us a letter? Use our <a href="contacts.html#Mailing_address">mailing address</a>.</p>
+	
+
+或者可以用它自己的文档片段参考链接到同一份文件的另一部分：
+
+	<p>The <a href="#Mailing_address">company mailing address</a> can be found at the bottom of this page.</p>
+
+
+#### 4.2.2 绝对链接和相对链接
+#### 4.2.3 尽可能使用相对链接
+#### 4.2.4 链接到非html资源 ——留下清晰的指示
+#### 4.2.5 在下载链接时使用下载属性
+
+
+### 4.3 电子邮件链接
+
+其最基本和最常用的使用形式为一个mailto:link （链接），链接简单说明收件人的电子邮件地址。例如:
+
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+	
+	<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+	
+这是一个仅提供收件人地址的链接，同时你还可以通过该链接提供更丰富的信息。
+
+下面是一个包含cc、bcc、主题和主体的示例：
+
+		<a href="mailto:nowhere@mozilla.org?cc=name2@rapidtables.com&bcc=name3@rapidtables.com&amp;subject=The%20subject%20of%20the%20email &amp;body=The%20body%20of%20the%20email">
+	  Send mail with cc, bcc, subject and body
+	</a>
+
+超链接并表面上那么简单，他有更详细的规则和丰富的表现形式
+
+
+
 ## 5 高级文字格式
+
+描述列表
+
 
 ## 6 文档与网站构架
 
@@ -236,7 +384,7 @@ HTML 的主要工作就是编辑文本结构和文本内容，以便在浏览器
 
 **HTML 首先是简单的简单的结构化文本文档。其复杂性便在于如何更优美的实现结构化和语义化。由此延伸出来的学习目标便是从 HTML 的网页结构框架开始，逐个 HTML 网页的所有结构组成，最终使用这些语义化的结构任意的构建自己的网站。**
 
-
+**学习之道：当你深刻的理解了每一个基础的知识，那么招式便显得顺理成章**
 
 
 
