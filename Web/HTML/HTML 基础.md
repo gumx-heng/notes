@@ -373,10 +373,165 @@ HTML 中存在三种不同类型的列表：
 
 ## 5 高级文字格式
 
-描述列表
+
+
+### 5.1 描述列表,即每一行包含实体部分和描述部分，如下：
+
+		<dl>
+		  <dt>soliloquy</dt>
+		  <dd>In drama, where a character speaks to themselves, representing their inner thoughts or feelings and in the process relaying them to the audience (but not to other characters.)</dd>
+		  <dt>monologue</dt>
+		  <dd>In drama, where a character speaks their thoughts out loud to share them with the audience and any other characters present.</dd>
+		  <dt>aside</dt>
+		  <dd>In drama, where a character shares a comment only with the audience for humorous or dramatic effect. This is usually a feeling, thought or piece of additional background information.</dd>
+		</dl>
+
+
+<dl>
+  <dt>soliloquy</dt>
+  <dd>In drama, where a character speaks to themselves, representing their inner thoughts or feelings and in the process relaying them to the audience (but not to other characters.)</dd>
+  <dt>monologue</dt>
+  <dd>In drama, where a character speaks their thoughts out loud to share them with the audience and any other characters present.</dd>
+  <dt>aside</dt>
+  <dd>In drama, where a character shares a comment only with the audience for humorous or dramatic effect. This is usually a feeling, thought or piece of additional background information.</dd>
+</dl>
+
+
+**请注意：一个术语&lt;dt&gt;可以同时有多个描述&lt;dd&gt;**
+
+### 5.2 块引用
+
+HTML 也有用于标记引用的特性，引用区分于块应用和行引用，分别使用不同的元素。
+
+#### 5.2.1 块引用
+
+使用 &lt;blockquote&gt; 实现块引用，其中cite属性里用URL来指向引用的资源：
+
+	<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+	  <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+	  Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+	</blockquote>
+
+
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+  <p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block
+  Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+</blockquote>
+
+#### 5.2.2 行引用
+
+使用 &lt;q&gt; 标签实现行引用，同样有 cite 属性：
+	
+	<p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+	for short quotations that don't require paragraph breaks.</q></p>
+
+浏览器默认将其作为普通文本放入引号内表示引用，表现如下：
+
+<p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended
+for short quotations that don't require paragraph breaks.</q></p>
+
+### 5.3 缩略语
+
+&lt;abbr&gt;——它常被用来包裹一个缩略语或缩写，并且提供缩写的解释（包含在title属性中），例如：
+
+	<p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+
+
+<p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+
+
+### 5.4 标记联系方式
+
+address 元素用于标记联系方式
+
+	<address>
+	  <p>Chris Mills, Manchester, The Grim North, UK</p>
+	</address>
+
+<address>
+  <p>Chris Mills, Manchester, The Grim North, UK</p>
+</address>
+
+
+### 5.5 上标（sup）和下标（sub）
+
+	<p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+	<p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+	<p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+<p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+<p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+<p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+
+### 5.6 展示计算机代码
+
+* code: 用于标记计算机通用代码。
+* pre: 对保留的空格（通常是代码块）——如果您在文本中使用缩进或多余的空白，浏览器将忽略它，您将不会在呈现的页面上看到它。但是，如果您将文本包含在&lt;pre&gt;&lt;/pre&gt;标签中，那么空白将会以与你在文本编辑器中看到的相同的方式渲染出来。
+* var: 用于标记具体变量名。
+* kbd: 用于标记输入电脑的键盘（或其他类型）输入。
+* samp: 用于标记计算机程序的输出。
+
+
+### 5.7 标记时间和日期
+
+	<time datetime="2016-01-20">20 January 2016</time>
+	
+
+<time datetime="2016-01-20">20 January 2016</time>
+
 
 
 ## 6 文档与网站构架
+
+
+除了定义网页的各个部分（例如“段落”或“图片”）外，HTML还拥有一些用于定义网站区域的块级元素(例如“头部”，“导航菜单”，“主要内容列”)。本文将探讨如何规划基本的网站结构，并通过编写HTML来表示这种网站结构。
+
+
+
+### 6.1 文档的基本部
+
+* 标题
+* 导航
+* 主要内容
+* 侧栏
+* 页脚
+
+
+### 6.2 HTML 元素细节
+
+一些主要的元素定义：
+
+* main 展现了页面内容的独特性。
+* article 闭合一块与自身相关的内容。
+* section 具体的功能分区。
+* aside 
+* header 
+	
+	展现了一系列的介绍性内容。如果它是 body 的子元素,它就定义了网站的全局页眉。但是如果它是 article 或 section 的子元素，它就定义了这些部分的特定的页眉(不要把这些与titles and headings混淆)。
+	
+* nav 导航，二级链接等
+* footer 页面的页脚
+
+
+### 6.3 没有特定语义的修饰元素 div 和 span
+
+div 是块级无语义元素。span 是行级无语义元素。
+
+### 6.4 换行与水平分割线 br、hr
+
+通过这一章，了解一基本的网页结构和语义。详细等标签和文档结构要做详细的整理。
+
+
+
+
+
+
+
+
+
+
+
 
 **总结：**
 
