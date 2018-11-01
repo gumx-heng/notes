@@ -198,17 +198,16 @@ CSS 的组成规则：
 
 这些属性选择器尝试匹配精准的属性值：
 
+* [attr] : 该选择器选择包含attr属性的所有元素，不论attr的值为何。 
+
+* [attr=val] : 该选择器仅选择attr的属性值为val的所有元素。
+
+* [attr~=val] : 该选择器仅选择具有attr=属性，而且val值是attr值包含的被空格分割的取值列表中的一个。
 
 
-- [attr]: 该选择器选择包含attr属性的所有元素，不论attr的值为何。
-
-- [attr=val]: 该选择器仅选择attr的属性值为val的所有元素。
-
-- [attr~=val]: 该选择器仅选择具有attr=属性，而且val值是attr值包含的被空格分割的取值列表中的一个。
-
-  ```html
-  <li data-quantity="optional 150g" data-meat>Bacon bits</li>
-  ```
+```html
+<li data-quantity="optional 150g" data-meat>Bacon bits</li>
+```
 
 
 
@@ -220,13 +219,10 @@ CSS 的组成规则：
 
 
 
-- [attr!=val]: 选择属性值是 val 或者以 val- 开头的元素。
-
-- [attr^=val]: 选择属性值以val开头的元素（包括val本身）。
-
-- [attr$=val]: 选择属性值以val结尾的元素（包括val本身）。
-
-- [attr*=val]: 选择属性值中包含**子**字符串val的元素
+- [attr!=val] : 选择属性值是 val 或者以 val- 开头的元素。
+- [attr^=val] : 选择属性值以val开头的元素（包括val本身）。 
+- [attr$=val] : 选择属性值以val结尾的元素（包括val本身）。 
+- [attr*=val] : 选择属性值中包含**子**字符串val的元素 .
 
 
 
