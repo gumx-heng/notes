@@ -1,4 +1,4 @@
-![1540982572308](F:\Nextcloud Data\Git Repositories\notes\Web\CSS\images\脑图.png)
+![1540982572308](./images/脑图.png)
 
 
 

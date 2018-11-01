@@ -134,7 +134,7 @@ section {
 
 当元素表现为flex 框时，他们沿着两个轴来布局：
 
-![1540894492439](F:\Nextcloud Data\Git Repositories\notes\Web\CSS\images\CSS 排版概述_1.png)
+![1540894492439](./images/CSS 排版概述_1.png)
 
 
 
@@ -332,7 +332,7 @@ button:first-child {
 
 
 
-![1540978368396](F:\Nextcloud Data\Git Repositories\notes\Web\CSS\images\CSS 排版概述_2.png)
+![1540978368396](./images/CSS 排版概述_2.png)
 
 
 
