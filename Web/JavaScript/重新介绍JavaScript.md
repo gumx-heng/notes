@@ -63,6 +63,8 @@ var d = Math.PI * (r + r);
 
 JavaScript 中的字符串是一串 Unicode字符序列。
 
+字符串是不可变的。
+
 
 
 ### 其他类型
